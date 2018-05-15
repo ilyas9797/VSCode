@@ -46,7 +46,7 @@ def check_stab_of_linear_props(rounds_start, rounds_end, samples_num):
         
 
 if __name__ == '__main__':
-    rounds_start = 2
+    rounds_start = 1
     rounds_end = 100
     samples_num = 15
 
@@ -60,8 +60,8 @@ if __name__ == '__main__':
     check_call(["clefia_exec.exe", str(rounds_start), str(rounds_end)])
 
     # check linear properties
-    #check_linear_props(rounds_start, rounds_end, samples_num)
+    check_linear_props(rounds_start, rounds_end, samples_num)
 
     # check stability of linear properties
-    check_stab_of_linear_props(rounds_start, rounds_end, samples_num)
+    #check_stab_of_linear_props(rounds_start, rounds_end, samples_num)
 

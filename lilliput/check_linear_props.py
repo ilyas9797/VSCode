@@ -86,11 +86,11 @@ def check_stab_of_linear_props(rounds_start, rounds_end, samples_num):
 
 if __name__ == '__main__':
 
-    rounds_start = 2
+    rounds_start = 1
     rounds_end = 50
     samples_num = 15
     encrypt_decrypt_samples(rounds_start, rounds_end, samples_num)
-    #check_linear_props(rounds_start, rounds_end, samples_num)
-    check_stab_of_linear_props(rounds_start, rounds_end, samples_num)
+    check_linear_props(rounds_start, rounds_end, samples_num)
+    #check_stab_of_linear_props(rounds_start, rounds_end, samples_num)
 
 

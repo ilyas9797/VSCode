@@ -50,4 +50,4 @@ def check_mes_of_perf(rounds_start, rounds_end, samples_num):
 
 
 if __name__ == '__main__':
-    check_mes_of_perf(1,10,5)
+    check_mes_of_perf(1,10,25)
