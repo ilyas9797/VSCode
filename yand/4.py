@@ -34,7 +34,7 @@ def dfs(R, P, X):
     if len(P) == 0 and len(X) == 0:
         ##############################
         Max_Cliques.append(R)
-        print(R)
+        # print(R)
         # if len(Max_Cliques[-1]) == n - 1:
         #     print(n - 1)
         #     print(' '.join(str(x) for x in Max_Cliques[-1]))
@@ -70,29 +70,23 @@ def main():
             i, j = map(int, file.readline().split())
             matrix[i - 1][j - 1] = 1
             matrix[j - 1][i - 1] = 1
-    
-    # matrix = [[0 for j in range(n)] for i in range(n)]
-    # for k in range(m):
-    #     i, j = map(int, input().split())
-    #     matrix[i - 1][j - 1] = 1
-    #     matrix[j - 1][i - 1] = 1
 
     dfs(set(), {i + 1 for i in range(n)}, set())
 
-    # for i in Max_Cliques:
-    #     if len(i) == n - 1:
-    #         print(n - 1)
-    #         print(' '.join(str(x) for x in i))
-    #         print(' '.join(str(x) for x in set.difference({j + 1 for j in range(n)}, i)))
-    #         break
-    #     elif len(i) < n - 1:
-    #         if set.difference({j + 1 for j in range(n)}, i) in Max_Cliques:
-    #             print(len(i))
-    #             print(' '.join(str(x) for x in i))
-    #             print(' '.join(str(x) for x in set.difference({j + 1 for j in range(n)}, i)))
-    #             break
-    # else:
-    print(-1)
+    for i in Max_Cliques:
+        if len(i) == n - 1:
+            print(n - 1)
+            print(' '.join(str(x) for x in i))
+            print(' '.join(str(x) for x in set.difference({j + 1 for j in range(n)}, i)))
+            break
+        elif len(i) < n - 1:
+            if set.difference({j + 1 for j in range(n)}, i) in Max_Cliques:
+                print(len(i))
+                print(' '.join(str(x) for x in i))
+                print(' '.join(str(x) for x in set.difference({j + 1 for j in range(n)}, i)))
+                break
+    else:
+        print(-1)
 
 if __name__ == '__main__':
     main()
