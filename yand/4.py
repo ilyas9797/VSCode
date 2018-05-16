@@ -62,12 +62,14 @@ def dfs(R, P, X):
 
 def main():
     global n, m, matrix, Max_Cliques
-    # n, m = map(int, input().split())
-    with open('4.txt', 'r') as file:
-        n, m = map(int, file.readline().split())
+    
+    # n, m = map(int, input().split())                      # раскомментировать для ввода с клавиатуры
+    with open('4.txt', 'r') as file:                        # закомменировать для ввода с клавиатуры
+        n, m = map(int, file.readline().split())            # закомменировать для ввода с клавиатуры
         matrix = [[0 for j in range(n)] for i in range(n)]
         for k in range(m):
-            i, j = map(int, file.readline().split())
+            # i, j = map(int, input().split())              # раскомментировать для ввода с клавиатуры
+            i, j = map(int, file.readline().split())        # закомменировать для ввода с клавиатуры
             matrix[i - 1][j - 1] = 1
             matrix[j - 1][i - 1] = 1
 
